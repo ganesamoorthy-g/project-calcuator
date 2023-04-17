@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesamoorthy Calculator</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            outline: none;
+            background-color: rgb(118, 235, 235);
+        }
+
+        .container {
+            height: 10vh;
+            display: flexbox;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .calculator {
+            padding: 16px;
+            display: grid;
+            grid-template-columns: repeat(4, 76px);
+
+        }
+
+        input {
+            box-shadow: inset 6px 6px 13px chocolate;
+            grid-column: span 4;
+            height: 65px;
+            text-align: end;
+            margin: 2px;
+            padding: 7px;
+            font-size: larger;
+            border-radius: 10%;
+        }
+
+        button {
+            height: 55px;
+            margin: 2px;
+            padding: 8px;
+            border-radius: 20%;
+            font-weight: bold;
+            background-color: darkgray;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="calculator">
+        <input id="input" placeholder="0">
+        <button onclick="clr()">C</button>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display('+')">+</button>
+        <button onclick="display('-')">-</button>
+        <button onclick="display('*')">*</button>
+        <button onclick="display('/')">/</button>
+        <button onclick="display('.')">.</button>
+        <button onclick="calculator1()">=</button>
+
+        <script>
+
+            var get=document.getElementById("input");
+        
+             function display(num){
+                  get.value+=num
+                }
+                
+            function clr(){
+                get.value=" "
+            }
+            function calculator1() {
+                 var result = eval(get.value);
+                get.value = parseFloat(result.toFixed(5));
+}
+
+
+        </script>
+    </div>
+</body>
+
+</html>
